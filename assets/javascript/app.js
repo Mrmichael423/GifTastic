@@ -1,6 +1,8 @@
 var topics = ["Kevin Hart", "Dave Chappelle", "Tim Allen", "Eddie Murphy", "George Carlin", "Robin Williams", "Rodney Dangerfield", "Chris Rock", "Will Ferrell", "Bill Cosby"]
+console.log(topics)
 
 function renderButtons() {
+    console.log(renderButtons)
     $("#buttons").empty();
 
     for(var i = 0; i< topics.length; i++){
@@ -12,9 +14,13 @@ function renderButtons() {
         $("#buttons").append(gif);
     }
 }
+$("#add-gif").on("click", function(event){
+    event.preventDefault();
+    var newGif = $("#gif-input").val().trim();
+    topics.push(newGif);
+    renderButtons();
+})
 renderButtons()
-console.log(topics)
-console.log(renderButtons)
 
 
 
