@@ -41,8 +41,13 @@ $("#buttons").on("click", ".comic", function() {
             var h3 = $("<h3>").text("Rating: " + rating);
 
             var image = $("<img>");
-            image.attr("src", results[i].images.fixed_height_still.url);
-
+            image.attr({
+                src: results[i].images.fixed_height_still.url,
+                "data-still": results[i].images.fixed_height_still.url,
+                "data-animate": results[i].images.fixed_height.url,
+                "data-state": "still"
+        });
+            image.addClass("pick")
             gifDiv.prepend(h3);
             gifDiv.prepend(image);
 
@@ -50,7 +55,23 @@ $("#buttons").on("click", ".comic", function() {
         }
     })
 })
-
+    $("#images").on("click", ".pick", function(){
+        console.log($(this))
+        var state = $(this).attr("data-state");
+        var stillUrl = $(this).attr("data-still");
+        var animateUrl = $(this).attr("data-animate");
+        
+        if (state === "still") {
+            $(this).attr("src", animateUrl);
+            $(this).attr("data-state", "animate");
+            
+        } else if (state === "animate") {
+            $(this).attr("src", stillUrl);
+            $(this).attr("data-state", "still")
+            
+        }
+    })
+    
 
 
 renderButtons()
