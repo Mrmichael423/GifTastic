@@ -34,7 +34,7 @@ $("#buttons").on("click", ".comic", function() {
         var results = response.data
 
         for(var i = 0; i < results.length; i++){
-            var gifDiv = $("<div>");
+            // var gifDiv = $("<div>");
 
             var rating = results[i].rating;
 
@@ -48,10 +48,10 @@ $("#buttons").on("click", ".comic", function() {
                 "data-state": "still"
         });
             image.addClass("pick")
-            gifDiv.prepend(h3);
-            gifDiv.prepend(image);
+            $("#images").prepend(h3);
+            $("#images").prepend(image);
 
-            $("#images").prepend(gifDiv);
+            // $("#images").append(gifDiv);
         }
     })
 })

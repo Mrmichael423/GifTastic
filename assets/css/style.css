@@ -1,0 +1,60 @@
+body {
+    background-image: url(https://mediad.publicbroadcasting.net/p/kmuw/files/styles/x_large/public/201703/stand-up-comedy.jpg);
+    background-repeat: no-repeat;
+    background-size: 100% ;
+}
+#images{
+    width: 65%;
+    margin: auto;
+    background: ivory;
+    margin-top: 2%;
+    /* text-align: center; */
+    display: block;
+    max-height: 300px;
+
+
+}
+
+.pick{
+    width: auto
+}
+
+
+h1 {
+    text-align: center;
+    background: ivory;
+    width: 65%;
+    margin: auto;
+    margin-top: 2%;
+}
+#gif-form {
+    background: ivory;
+    text-align: center;
+    width: 65%;
+    margin: auto;
+    margin-top: 2%;
+}
+#add-gif{
+    margin-top: 15px;
+    opacity: .75;
+    font-size: 25px;
+    background: red;
+    border-radius: 2px;
+}
+.comic{
+    margin-top: 15px;
+    opacity: .75;
+    font-size: 25px;
+    background: red;
+    border-radius: 2px;
+    margin-right: 2%;
+    text-align: center;
+}
+#add-gif:hover{
+    opacity: 1;
+
+}
+.comic:hover{
+    opacity: 1;
+
+}
