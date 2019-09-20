@@ -8,16 +8,14 @@ body {
     margin: auto;
     background: ivory;
     margin-top: 2%;
-    /* text-align: center; */
     display: block;
-    max-height: 300px;
+    overflow: scroll;
+    height: 500px;
+    text-align: center
 
 
 }
 
-.pick{
-    width: auto
-}
 
 
 h1 {
@@ -56,5 +54,9 @@ h1 {
 }
 .comic:hover{
     opacity: 1;
+
+}
+h3 {
+
 
 }

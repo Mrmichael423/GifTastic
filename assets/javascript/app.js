@@ -14,6 +14,7 @@ function renderButtons() {
         $("#buttons").append(gif);
     }
 }
+
 $("#add-gif").on("click", function(event){
     event.preventDefault();
     var newGif = $("#gif-input").val().trim();
@@ -24,7 +25,7 @@ $("#buttons").on("click", ".comic", function() {
     var search = $(this).attr("data-name");
     var queryURL = "https://api.giphy.com/v1/gifs/search?q=" +
     search + "&api_key=BkaUZZWcFij6J7AoQj3WtPb1R2p9O6V9&limit=10";
-
+    console.log(search)
     $("#images").empty()
     $.ajax({
         url: queryURL,
@@ -34,7 +35,7 @@ $("#buttons").on("click", ".comic", function() {
         var results = response.data
 
         for(var i = 0; i < results.length; i++){
-            // var gifDiv = $("<div>");
+            var gifDiv = $("<div>");
 
             var rating = results[i].rating;
 
@@ -48,10 +49,10 @@ $("#buttons").on("click", ".comic", function() {
                 "data-state": "still"
         });
             image.addClass("pick")
-            $("#images").prepend(h3);
-            $("#images").prepend(image);
+            gifDiv.append(h3);
+            gifDiv.append(image);
 
-            // $("#images").append(gifDiv);
+            $("#images").append(gifDiv);
         }
     })
 })
